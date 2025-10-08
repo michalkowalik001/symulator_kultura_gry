@@ -21,16 +21,29 @@ html_code = """
     """
 
 def show_sidebar():
-    #logo_path = os.path.join(BASE_DIR, "images", "logo_czarne.png")
-    #st.sidebar.image(logo_path, width=600)
+    # ----- LOGO -----
+    BASE_DIR = os.path.dirname(__file__)
+    logo_path = os.path.join(BASE_DIR, "..", "images", "logo_czarne.png")
+    if os.path.exists(logo_path):
+        st.sidebar.image(logo_path, width=600)
 
+    # ----- NAWIGACJA -----
     st.sidebar.markdown("### Nawigacja")
-    st.sidebar.markdown("[🏠 Strona główna](https://symulator-kultura-gry.streamlit.app)")
-    st.sidebar.markdown("[📊 Statystyki i przewidywania ligowe](https://symulator-kultura-gry.streamlit.app/eklapa_streamlit_2)")
-    st.sidebar.markdown("[⚽ Statystyki i przewidywania klubowe](https://symulator-kultura-gry.streamlit.app/eklapa_klub_site)")
-    st.sidebar.markdown("[📞 Kontakt](https://twoja-strona.streamlit.app/kontakt)")
-    st.sidebar.markdown("[🔢 Metodologia](https://symulator-kultura-gry.streamlit.app/Metodologia)")
 
+    if st.sidebar.button("🏠 Strona główna"):
+        st.switch_page("Home.py")
+
+    if st.sidebar.button("📊 Statystyki i przewidywania ligowe"):
+        st.switch_page("pages/eklapa_streamlit_2.py")
+
+    if st.sidebar.button("⚽ Statystyki i przewidywania klubowe"):
+        st.switch_page("pages/eklapa_klub_site.py")
+
+    if st.sidebar.button("📞 Kontakt"):
+        st.switch_page("pages/kontakt.py")
+
+    if st.sidebar.button("🔢 Metodologia"):
+        st.switch_page("pages/Metodologia.py")
 
     st.sidebar.markdown("---")
 
