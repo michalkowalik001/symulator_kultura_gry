@@ -36,10 +36,10 @@ def show_sidebar():
     # ----- NAWIGACJA -----
     st.sidebar.markdown("### Nawigacja")
 
-    st.sidebar.page_link("Home.py", label="🏠 Strona główna")
+    st.sidebar.page_link("app.py", label="🏠 Strona główna")
     st.sidebar.page_link("pages/eklapa_streamlit_2.py", label="📊 Statystyki i przewidywania ligowe")
     st.sidebar.page_link("pages/eklapa_klub_site.py", label="⚽ Statystyki i przewidywania klubowe")
-    st.sidebar.page_link("pages/kontakt.py", label="📞 Kontakt")
+    #st.sidebar.page_link("pages/kontakt.py", label="📞 Kontakt")
     st.sidebar.page_link("pages/Metodologia.py", label="🔢 Metodologia")
 
     st.sidebar.markdown("---")
