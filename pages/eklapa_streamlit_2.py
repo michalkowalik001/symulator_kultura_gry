@@ -55,7 +55,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: sans-serif;
-    font-size: 11px;
+    font-size: 12px;
 }
 th, td {
     text-align: center !important;
