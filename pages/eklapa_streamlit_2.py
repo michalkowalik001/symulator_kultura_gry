@@ -18,7 +18,7 @@ st.markdown(hide_default_sidebar, unsafe_allow_html=True)
 
 show_sidebar()
 
-st.title("📊Statystyki i przewidywania ligowe📊")
+st.title("Statystyki i przewidywania ligowe")
 
 
 #styl tabeli
