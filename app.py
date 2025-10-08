@@ -60,9 +60,7 @@ with col1:
     """
     with st.container(border = False):
         st.markdown("""
-            **Chcemy stworzyć kurs, w którym pokażemy jak zostać analitycznym magikiem i być w stanie przewidywać symulować wyniki meczów i rozgrywek ligowych.**
-            
-            To wcale nie takie trudne. Dodatkowo, chcemy pokazać, jak tworzyć dashboardy w Excelu, takie jak ten, w których samodzielnie będziesz mógł badać wybrane zespoły i ligi. 
+            **Chcemy stworzyć kurs, w którym pokażemy jak zostać analitycznym magikiem i być w stanie przewidywać symulować wyniki meczów i rozgrywek ligowych. To wcale nie takie trudne.**
             
             Niezależnie czy analizujesz dane na codzień, czy jesteś zupełnie zielony i nie masz pojęcia jak się do tego zabrać. Przeprowadzimy Cię przez cały proces od A do Z.
             
