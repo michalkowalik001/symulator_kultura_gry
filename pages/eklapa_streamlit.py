@@ -42,27 +42,21 @@ tr:nth-child(even) td {
 """
 
 # Wczytanie danych
-@st.cache_data
 df = df()
 df1 = df1()
 df1.rename(columns = {"Team":"Drużyna", "exp_points":"Oczekiwane punkty", "elo":"ELO"}, inplace = True)
 
-@st.cache_data
 df2 = df2().head(10)
 df2.rename(columns = {'Home':'Gospodarz','Away':'Gość','Date':'Data', 'Day':"Dzień", "Time":"Czas", "Kolejka":"Wk", "HomeElo":"Gospodarz ELO",	
                       "AwayElo":"Gość ELO", "p_home_win":"Szansa gospodarz", "p_draw":"Szansa remis", "p_away_win":"Szansa gość"}, inplace = True)
 
-@st.cache_data
 df3 = df3()
 df3['Pozycja'] = range(1, len(df3) + 1)
 df3.rename(columns = {'Pos':'Obecna pozycja', 'Team':'Drużyna', 'Matches':"Mecze", 'Wins':"Wygrane", "Draws":"Remisy", "Losses":"Porażki", "Points":'Punkty','exp_points':"Oczekiwane punkty", "elo":"ELO", "GF":'GZ', "GA":"GS"}, inplace = True)
 cols1=['Pozycja', 'Drużyna', 'Obecna pozycja', 'Oczekiwane punkty', 'ELO', 'Punkty', 'Mecze']
 
-@st.cache_data
 df4 = df4()
-@st.cache_data
 df5 = df5()
-@st.cache_data
 df6 = df6()
 
 df2_html_table = table_style + df2.to_html(index=False, escape=False)
