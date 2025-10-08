@@ -97,6 +97,22 @@ df6 = df6()
 df2_html_table = table_style_1 + df2.to_html(index=False, escape=False)
 df3_html_table = table_style_1 + df3[cols1].to_html(index=False, escape=False)
 
+#########
+cols = [f"{i}" for i in range(1, 19)]
+styled = df.style.format({col: "{:.1%}" for col in cols}).background_gradient(cmap="Greens", subset=cols)
+
+st.subheader("Szanse na mistrzostwo", divider="gray")
+st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
+html_table = styled.to_html(index='Team')
+scrollable_html = f"""
+<div style="overflow-x: auto; white-space: nowrap;">
+{html_table}
+</div>
+"""
+
+st.markdown(table_style, unsafe_allow_html=True)
+st.markdown(scrollable_html, unsafe_allow_html=True)
+
 ###########
 
 st.subheader("Przewidywana tabela końcowa", divider="gray")
@@ -181,21 +197,6 @@ with st.container(border = False):
             📄 **[Wypełnij krótką ankietę](https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog)** 📄
         """)
 
-#########
-cols = [f"{i}" for i in range(1, 19)]
-styled = df.style.format({col: "{:.1%}" for col in cols}).background_gradient(cmap="Greens", subset=cols)
-
-st.subheader("Szanse na mistrzostwo", divider="gray")
-st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
-html_table = styled.to_html(index='Team')
-scrollable_html = f"""
-<div style="overflow-x: auto; white-space: nowrap;">
-{html_table}
-</div>
-"""
-
-st.markdown(table_style, unsafe_allow_html=True)
-st.markdown(scrollable_html, unsafe_allow_html=True)
 
 #####
 
