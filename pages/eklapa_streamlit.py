@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-from data import df, df1, df2, df3, df4, df5, df6, calculate_elo_wdl, performance_viz
+from data.data import df, df1, df2, df3, df4, df5, df6, calculate_elo_wdl, performance_viz
 from utils.sidebar import show_sidebar
 
 st.set_page_config(layout="wide")
