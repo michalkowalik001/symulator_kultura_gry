@@ -25,11 +25,12 @@ def show_sidebar():
     #st.sidebar.image(logo_path, width=600)
 
     st.sidebar.markdown("### Nawigacja")
-    st.sidebar.markdown("🏠 Strona główna")
-    st.sidebar.markdown("📊 Statystyki i przewidywania ligowe")
-    st.sidebar.markdown("⚽ Statystyki i przewidywania klubowe")
-    st.sidebar.markdown("📞 Kontakt")
-    st.sidebar.markdown("🔢 Metodologia")
+    st.sidebar.markdown("[🏠 Strona główna](https://symulator-kultura-gry.streamlit.app)")
+    st.sidebar.markdown("[📊 Statystyki i przewidywania ligowe](https://symulator-kultura-gry.streamlit.app/eklapa_streamlit_2)")
+    st.sidebar.markdown("[⚽ Statystyki i przewidywania klubowe](https://symulator-kultura-gry.streamlit.app/eklapa_klub_site)")
+    st.sidebar.markdown("[📞 Kontakt](https://twoja-strona.streamlit.app/kontakt)")
+    st.sidebar.markdown("[🔢 Metodologia](https://symulator-kultura-gry.streamlit.app/Metodologia)")
+
 
     st.sidebar.markdown("---")
 
