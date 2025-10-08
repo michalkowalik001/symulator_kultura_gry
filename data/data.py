@@ -36,7 +36,7 @@ def df2():
 def df3():
     df3_path = os.path.join(BASE_DIR, "data", "tabela_eklapa.xlsx")
     df3 = pd.read_excel(df3_path)
-    df3 = df3.sort_values('exp_points', ascending = False)
+    df3 = df3.sort_values('exp_points', ascending = False).round(0)
     return df3
 
 
