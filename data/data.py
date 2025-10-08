@@ -89,7 +89,7 @@ def df6():
     df6 = pd.read_excel(df6_path)
     return df6
 
-@st.cache_data
+
 def performance_viz(df):
     viz = df.sort_values('performance', ascending=True)
     # stonowane kolory
@@ -140,7 +140,6 @@ def calculate_elo_wdl(elo1, elo2, r=0.4):
 
     return W, D, L
 
-@st.cache_data
 def szanse(df, selected_team):
 
     # przykładowy DataFrame
