@@ -27,11 +27,13 @@ show_sidebar()
 st.title("Metodologia")
 
 st.write("Źródła danych: https://fbref.com/en/; http://clubelo.com")
-st.write("Metodologia symulacji bazujacych na ELO na podstawie Aleks Kapich / Mathematics Behind Predicting Football Results — the Poisson Model, Skellam Distribution & ELO Ratings [https://medium.com/@aleks-kapich/mathematics-behind-predicting-football-results-the-poisson-model-skellam-distribution-elo-bf50b8c5727f]")
+st.write("Metodologia symulacji bazujacych na ELO na podstawie Aleks Kapich, 2025, Mathematics Behind Predicting Football Results — the Poisson Model, Skellam Distribution & ELO Ratings [https://medium.com/@aleks-kapich/mathematics-behind-predicting-football-results-the-poisson-model-skellam-distribution-elo-bf50b8c5727f]")
 
 st.write("Tabela 'Przewidywana tabela końcowa' została uszeregowana malejąco według kolumny 'Oczekiwane punkty'. Wartości kolumny 'Oczekiwane punkty' (1) oznaczają sumę punktów zespołu we wszystkich symulacjach, podzieloną przez liczbę symulacji.")
 
 st.write("Słupki wykresu 'Forma względem oczekiwań' oznaczają średnią różnicę między punktami oczekiwanymi (zgodnie z definicją (1) wyżej), a rzeczywistymi punktami, zdobytymi przez drużynę. Wartości dodatnie (zielone słupki) oznaczają, że drużyna radzi sobie lepiej od oczekiwań. Wartości ujemne (czerwone słupki) oznaczają, że drużyna radzi sobie gorzej od oczekiwań.")
 
-st.write("Tabela 'Najbliższe mecze' została uszeregowana malejąco według kolumny 'Data'. Kolumny 'Szanse gospodarz', 'Szanse remis', 'Szanse gość' (...)")
+st.write("Tabela 'Najbliższe mecze' została uszeregowana malejąco według kolumny 'Data'. Kolumny 'Szanse gospodarz', 'Szanse remis', 'Szanse gość' obliczone analitycznie (nie na podstawie symulacji), zgodnie z Kapich (2025), j.w., bez uwzględnienia przewagi własnego boiska")
+
+st.write("W tabeli "Szanse na mistrzostwo" i na wykresie "Szanse na poszczególne pozycje", obliczonych symulacyjnie zgodnie z Kapich (2025) uwzględniono przewagę własnego boiska.")
 
