@@ -55,6 +55,18 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+card_style = """
+<div style="
+    background-color: #f9f9f9; 
+    border-radius: 15px; 
+    padding: 20px; 
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+">
+    {content}
+</div>
+"""
+
 # Pierwsza karta - ankieta i newsletter
 html_code = """
 <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
