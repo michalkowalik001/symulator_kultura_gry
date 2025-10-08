@@ -7,6 +7,13 @@ from utils.sidebar import show_sidebar
 
 st.set_page_config(layout="centered")
 
+# Ukryj domyślny sidebar z multipage navigation
+hide_default_sidebar = """
+    <style>
+    [data-testid="stSidebarNav"] {display: none;}
+    </style>
+"""
+st.markdown(hide_default_sidebar, unsafe_allow_html=True)
 
 show_sidebar()
 
