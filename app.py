@@ -76,9 +76,9 @@ content_1 = """
 
 <p>Najpierw jednak musimy dowiedzieć się więcej o Tobie i Twoich potrzebach.</p>
 
-<p>📄📄📄<b>Wypełnij krótką <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog" target="_blank">ankietę</a></b> 📄📄📄</p>
+<p>📄📄📄<b><a href="https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog" target="_blank">Wypełnij krótką  ankietę</a></b> 📄📄📄</p>
 
-<p><b>⬇️⬇️⬇️ Lub zapisz się na newsletter, w którym wyślemy Ci postępy w tworzeniu kursu ⬇️⬇️⬇️</b></p>
+<p><b>⬇️ Lub zapisz się na newsletter, w którym wyślemy Ci postępy w tworzeniu kursu ⬇️</b></p>
 """
 
 # wstawiamy zawartość bezpośrednio, używając f-string z podwójnymi klamrami w card_style
@@ -89,6 +89,7 @@ st.markdown(f"""
     padding: 20px; 
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
 ">
     {content_1}
 </div>
