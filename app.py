@@ -21,16 +21,13 @@ show_sidebar()
 
 card_style = """
 <div style="
-    background-color: #f0f0f0; 
+    background-color: #f9f9f9; 
     border-radius: 15px; 
     padding: 20px; 
-    text-align: center; 
-    transition: transform 0.2s;
     margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 ">
-    <a href="{url}" target="_blank" style="text-decoration: none; color: #000000;">
-        <h3 style="margin: 0;">{emoji} {text} {emoji}</h3>
-    </a>
+    {content}
 </div>
 """
 
@@ -55,17 +52,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-card_style = """
-<div style="
-    background-color: #f9f9f9; 
-    border-radius: 15px; 
-    padding: 20px; 
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-">
-    {content}
-</div>
-"""
+
 
 # Pierwsza karta - ankieta i newsletter
 html_code = """
