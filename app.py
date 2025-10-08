@@ -62,6 +62,21 @@ src="https://sy0kh.mjt.lu/wgt/sy0kh/0phq/form?c=f6f3e641" width="100%" style="he
 
 card(content_newsletter)
 
-# Czwarta karta - buy_coffee
-content_coffee = "<p>☕ Wspomóż naszą pracę i rozwój kursu!</p>"
-card(content_html=content_coffee, inner_callable=buy_cofee)
+
+with st.container():
+    # styl karty
+    st.markdown("""
+    <div style="
+        background-color: #f9f9f9; 
+        border-radius: 15px; 
+        padding: 20px; 
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    ">
+        <p>☕ Wspomóż naszą pracę i rozwój kursu!</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # wywołanie przycisku buy_coffee w tym samym container
+    buy_cofee()
