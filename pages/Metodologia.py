@@ -27,7 +27,7 @@ show_sidebar()
 st.title("Metodologia")
 
 st.write("Źródła danych:")
-st.write("Metodologia zgodna z aleks-kapich.com")
+st.write("Metodologia symulacji bazujacych na ELO na podstawie Aleks Kapich / Mathematics Behind Predicting Football Results — the Poisson Model, Skellam Distribution & ELO Ratings [https://medium.com/@aleks-kapich/mathematics-behind-predicting-football-results-the-poisson-model-skellam-distribution-elo-bf50b8c5727f]")
 
 st.write("Tabela 'Przewidywana tabela końcowa' została uszeregowana malejąco według kolumny 'Oczekiwane punkty'. Wartości kolumny 'Oczekiwane punkty' (1) oznaczają sumę punktów zespołu we wszystkich symulacjach, podzieloną przez liczbę symulacji.")
 
