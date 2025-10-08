@@ -2,9 +2,12 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+BASE_DIR = os.path.dirname(__file__)
+
 
 def df():
-    df = pd.read_excel('/Users/michalkowalik/Desktop/eklapa_predyktor/symulacje.xlsx')
+    df_path = os.path.join(BASE_DIR, "data", "symulacje.xlsx")
+    df = pd.read_excel(df_path)
     for i in range(1,19):
         df.rename(columns = {f'Pos_{i}':f"{i}"}, inplace = True)
     df = df.sort_values(by = '1', ascending = False).reset_index(drop=True)
@@ -12,14 +15,16 @@ def df():
     return df
 
 def df1():
-    df1 = pd.read_excel('/Users/michalkowalik/Desktop/eklapa_predyktor/symulacje_punktowe.xlsx')
+    df1_path = os.path.join(BASE_DIR, "data", "symulacje_punktowe.xlsx")
+    df1 = pd.read_excel(df1_path)
     df1.set_index('Team')
     df1['exp_points'] = pd.to_numeric(df1['exp_points'], errors='coerce')
 
     return df1
 
 def df2():
-    df2 = pd.read_excel('/Users/michalkowalik/Desktop/eklapa_predyktor/next_matches.xlsx')
+    df2_path = os.path.join(BASE_DIR, "data", "next_matches.xlsx")
+    df2 = pd.read_excel(df2_path)
     for col in ['p_home_win','p_draw','p_away_win']:
         df2[col] = (df2[col]*100).round(0).astype(int).astype(str) + '%'
     df2['Date'] = df2['Date'].dt.date
@@ -28,13 +33,16 @@ def df2():
     return df2
 
 def df3():
+    df3_path = os.path.join(BASE_DIR, "data", "tabela_eklapa.xlsx")
+    df3 = pd.read_excel(df3_path)
     df3 = pd.read_excel('/Users/michalkowalik/Desktop/eklapa_predyktor/tabela_eklapa.xlsx')
     df3 = df3.sort_values('exp_points', ascending = False)
     return df3
 
 
 def df4():
-    df4 = pd.read_excel('/Users/michalkowalik/Desktop/eklapa_predyktor/all_clubs_elo_history.xlsx')
+    df4_path = os.path.join(BASE_DIR, "data", "all_clubs_elo_history.xlsx")
+    df4 = pd.read_excel(df4_path)
 
     club_mapping = {
         "Rakow": "Raków",
@@ -64,14 +72,16 @@ def df4():
     return df4
 
 def df5():
-    df5 = pd.read_excel('/Users/michalkowalik/Desktop/eklapa_predyktor/previous_matches.xlsx')
+    df5_path = os.path.join(BASE_DIR, "data", "previous_matches.xlsx")
+    df5 = pd.read_excel(df5_path)
     df5 = df5[['Date', 'Home', 'Score', 'Away', 'HomeElo', 'AwayElo', 'home_exp', 'away_exp', 'home_points', 'away_points', 'home_performance', 'away_performance']]
     df5 = df5[df5['Score'].notna()]
     df5['HomeElo'], df5['AwayElo'] = df5['HomeElo'].round(0), df5['AwayElo'].round(0)
     return df5
 
 def df6():
-    df6 = pd.read_excel('/Users/michalkowalik/Desktop/eklapa_predyktor/performance.xlsx')
+    df6_path = os.path.join(BASE_DIR, "data", "performance.xlsx")
+    df6 = pd.read_excel(df6_path)
     return df6
 
 def performance_viz(df):
@@ -132,10 +142,8 @@ def szanse(df, selected_team):
     team_probs = df[df['Team'] == selected_team][cols].T.reset_index()
     team_probs.columns = ['Pozycja', 'Prawdopodobieństwo']
 
-    # zamiana na procenty (opcjonalnie)
     team_probs['Prawdopodobieństwo'] = team_probs['Prawdopodobieństwo'] * 100
 
-    # wykres słupkowy
     fig = px.bar(
         team_probs,
         x='Pozycja',
@@ -146,8 +154,7 @@ def szanse(df, selected_team):
     )
 
     fig.update_traces(texttemplate='%{text:.1f}%', textposition='outside')
-
-    # ustawienia osi
+    
     fig.update_layout(
         xaxis=dict(tickmode='linear', dtick=1),
         yaxis=dict(range=[0, team_probs['Prawdopodobieństwo'].max()*1.3]),
