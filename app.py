@@ -1,15 +1,14 @@
 import streamlit as st
-import os
-import pandas as pd
 from data.data import buy_cofee
 from utils.sidebar import show_sidebar
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="EKSTRAKLASOWE PRZEWIDYWANIA",
+    page_title="Strona główna",
     layout="wide"
 )
 
+# Ukrycie domyślnego sidebaru
 hide_default_sidebar = """
     <style>
     [data-testid="stSidebarNav"] {display: none;}
@@ -19,50 +18,33 @@ st.markdown(hide_default_sidebar, unsafe_allow_html=True)
 
 show_sidebar()
 
-card_style = """
-<div style="
-    background-color: #f9f9f9; 
-    border-radius: 15px; 
-    padding: 20px; 
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-">
-    {content}
-</div>
+# Funkcja do tworzenia karty
+def card(content):
+    st.markdown(f"""
+    <div style="
+        background-color: #f9f9f9; 
+        border-radius: 15px; 
+        padding: 20px; 
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    ">
+        {content}
+    </div>
+    """, unsafe_allow_html=True)
+
+# Pierwsze dwie karty ze statystykami
+content_stats_liga = """
+<h3 style="text-align:center;">📊 Statystyki i przewidywania ligowe 📊</h3>
+"""
+content_stats_zespol = """
+<h3 style="text-align:center;">⚽️ Statystyki i przewidywania zespołowe ⚽️</h3>
 """
 
-st.markdown(
-    card_style.format(
-        url="https://twoja-strona.pl",
-        emoji="📊",
-        text="Statystyki i przewidywania ligowe"
-    ),
-    unsafe_allow_html=True
-)
+card(content_stats_liga)
+card(content_stats_zespol)
 
-# Odstęp między kartami
-st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)
-
-st.markdown(
-    card_style.format(
-        url="https://twoja-strona.pl",
-        emoji="⚽️",
-        text="Statystyki i przewidywania zespołowe"
-    ),
-    unsafe_allow_html=True
-)
-
-
-
-# Pierwsza karta - ankieta i newsletter
-html_code = """
-<iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-src="https://sy0kh.mjt.lu/wgt/sy0kh/0phq/form?c=f6f3e641" width="100%" style="height: 500px;"></iframe>
-
-<script type="text/javascript" src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
-"""
-
-content_1 = """
+# Trzecia karta - ankieta i newsletter (iframe w środku)
+content_newsletter = """
 <p><b>Chcemy stworzyć kurs, w którym pokażemy jak zostać analitycznym magikiem i być w stanie przewidywać i symulować wyniki meczów i rozgrywek ligowych. To wcale nie takie trudne.</b></p>
 
 <p>Niezależnie czy analizujesz dane na co dzień, czy jesteś zupełnie zielony i nie masz pojęcia jak się do tego zabrać. Przeprowadzimy Cię przez cały proces od A do Z.</p>
@@ -72,20 +54,15 @@ content_1 = """
 <p>📄 <b>Wypełnij krótką <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog" target="_blank">ankietę</a></b> 📄</p>
 
 <p><b>Lub zapisz się na newsletter, w którym wyślemy Ci postępy w tworzeniu kursu!</b></p>
+
+<iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+src="https://sy0kh.mjt.lu/wgt/sy0kh/0phq/form?c=f6f3e641" width="100%" style="height: 400px;"></iframe>
+<script type="text/javascript" src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
 """
 
-# wstawiamy zawartość bezpośrednio, używając f-string z podwójnymi klamrami w card_style
-st.markdown(f"""
-<div style="
-    background-color: #f9f9f9; 
-    border-radius: 15px; 
-    padding: 20px; 
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-">
-    {content_1}
-</div>
-""", unsafe_allow_html=True)
+card(content_newsletter)
 
-components.html(html_code, height=400, scrolling=False)
-
+# Czwarta karta - buy_coffee
+content_coffee = "<p>☕ Wspomóż naszą pracę i rozwój kursu!</p>"
+card(content_coffee)
+buy_cofee()
