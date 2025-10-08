@@ -35,5 +35,5 @@ st.write("Słupki wykresu 'Forma względem oczekiwań' oznaczają średnią ró�
 
 st.write("Tabela 'Najbliższe mecze' została uszeregowana malejąco według kolumny 'Data'. Kolumny 'Szanse gospodarz', 'Szanse remis', 'Szanse gość' obliczone analitycznie (nie na podstawie symulacji), zgodnie z Kapich (2025), j.w., bez uwzględnienia przewagi własnego boiska")
 
-st.write("W tabeli "Szanse na mistrzostwo" i na wykresie "Szanse na poszczególne pozycje", obliczonych symulacyjnie zgodnie z Kapich (2025) uwzględniono przewagę własnego boiska.")
+st.write("W tabeli 'Szanse na mistrzostwo' i na wykresie 'Szanse na poszczególne pozycje', obliczonych symulacyjnie zgodnie z Kapich (2025) uwzględniono przewagę własnego boiska.")
 
