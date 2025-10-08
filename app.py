@@ -4,7 +4,7 @@ from utils.sidebar import show_sidebar
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="Strona główna",
+    page_title="EKSTRAKLASOWE PRZEWIDYWANIA",
     layout="wide"
 )
 
