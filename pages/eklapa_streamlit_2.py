@@ -229,8 +229,8 @@ cols2=['Pozycja', 'Drużyna', "Mecze", "Punkty", 'Wygrane', 'Remisy', 'Porażki'
 tabela_html = table_style + df3[cols2].to_html(index=False, escape=False)
 st.markdown(tabela_html, unsafe_allow_html=True)
 ####
-
-st.write("Podoba Ci się nasz symulator ligowy? Stworzenie go pochłonęło sporo pracy. Wesprzyj nas, stawiając nam wirtualną kawę!")
+st.subheader("Podoba Ci się nasz symulator ligowy?", divider = 'gray')
+st.write("Stworzenie go pochłonęło sporo pracy. Wesprzyj nas, stawiając nam wirtualną kawę!")
 html_buycoffee = """
 <div style="width: 100%; max-width: 600px; font-family: Arial, sans-serif; margin: auto;">
     <div style="
