@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import pandas as pd
 from data.data import buy_cofee
 from utils.sidebar import show_sidebar
