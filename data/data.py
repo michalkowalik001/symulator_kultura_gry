@@ -5,7 +5,7 @@ import os
 
 BASE_DIR = os.getcwd()
 
-
+@st.cache_data
 def df():
     df_path = os.path.join(BASE_DIR, "data", "symulacje.xlsx")
     df = pd.read_excel(df_path)
@@ -15,6 +15,7 @@ def df():
 
     return df
 
+@st.cache_data
 def df1():
     df1_path = os.path.join(BASE_DIR, "data", "symulacje_punktowe.xlsx")
     df1 = pd.read_excel(df1_path)
@@ -23,6 +24,7 @@ def df1():
 
     return df1
 
+@st.cache_data
 def df2():
     df2_path = os.path.join(BASE_DIR, "data", "next_matches.xlsx")
     df2 = pd.read_excel(df2_path)
@@ -33,13 +35,14 @@ def df2():
 
     return df2
 
+@st.cache_data
 def df3():
     df3_path = os.path.join(BASE_DIR, "data", "tabela_eklapa.xlsx")
     df3 = pd.read_excel(df3_path)
     df3 = df3.sort_values('exp_points', ascending = False).round(0)
     return df3
 
-
+@st.cache_data
 def df4():
     df4_path = os.path.join(BASE_DIR, "data", "all_clubs_elo_history.xlsx")
     df4 = pd.read_excel(df4_path)
@@ -71,6 +74,7 @@ def df4():
 
     return df4
 
+@st.cache_data
 def df5():
     df5_path = os.path.join(BASE_DIR, "data", "previous_matches.xlsx")
     df5 = pd.read_excel(df5_path)
@@ -79,11 +83,13 @@ def df5():
     df5['HomeElo'], df5['AwayElo'] = df5['HomeElo'].round(0), df5['AwayElo'].round(0)
     return df5
 
+@st.cache_data
 def df6():
     df6_path = os.path.join(BASE_DIR, "data", "performance.xlsx")
     df6 = pd.read_excel(df6_path)
     return df6
 
+@st.cache_data
 def performance_viz(df):
     viz = df.sort_values('performance', ascending=True)
     # stonowane kolory
@@ -134,6 +140,7 @@ def calculate_elo_wdl(elo1, elo2, r=0.4):
 
     return W, D, L
 
+@st.cache_data
 def szanse(df, selected_team):
 
     # przykładowy DataFrame
