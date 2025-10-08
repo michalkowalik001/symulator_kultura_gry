@@ -1,16 +1,17 @@
 import streamlit as st
 import base64
+import os
 import streamlit.components.v1 as components
+
+BASE_DIR = os.getcwd()
 
 def image_to_base64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
-    
-twitter_icon = image_to_base64("/Users/michalkowalik/Desktop/Kultura Gry/Struktura/twitter.png")
 
-instagram_icon = image_to_base64("/Users/michalkowalik/Desktop/Kultura Gry/Struktura/instagram.png")
-
-facebook_icon = image_to_base64("/Users/michalkowalik/Desktop/Kultura Gry/Struktura/facebook.png")
+twitter_icon = image_to_base64(os.path.join(BASE_DIR, "images", "twitter.png"))
+instagram_icon = image_to_base64(os.path.join(BASE_DIR, "images", "instagram.png"))
+facebook_icon = image_to_base64(os.path.join(BASE_DIR, "images", "facebook.png"))
 
 html_code = """
     <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
