@@ -12,6 +12,7 @@ def image_to_base64(path):
 twitter_icon = image_to_base64(os.path.join(BASE_DIR, "images", "twitter.png"))
 instagram_icon = image_to_base64(os.path.join(BASE_DIR, "images", "instagram.png"))
 facebook_icon = image_to_base64(os.path.join(BASE_DIR, "images", "facebook.png"))
+kultura_gry_icon = image_to_base64(os.path.join(BASE_DIR, "images", "sygnet_czarny.png"))
 
 html_code = """
     <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
@@ -76,6 +77,9 @@ def show_sidebar():
     st.sidebar.markdown(
     f"""
     <div style="text-align:center; margin-top:10px;">
+        <a href="https://kulturagry.pl" target="_blank" style="margin:0 8px;">
+            <img src="data:image/png;base64,{kultura_gry_icon}" width="32" alt="Twitter">
+        </a>
         <a href="https://x.com/kulturagrypl" target="_blank" style="margin:0 8px;">
             <img src="data:image/png;base64,{twitter_icon}" width="32" alt="Twitter">
         </a>
