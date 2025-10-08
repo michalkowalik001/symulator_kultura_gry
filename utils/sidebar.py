@@ -31,7 +31,7 @@ def show_sidebar():
     st.sidebar.markdown("### Nawigacja")
 
     if st.sidebar.button("🏠 Strona główna"):
-        st.switch_page("Home.py")
+        st.switch_page("app.py")
 
     if st.sidebar.button("📊 Statystyki i przewidywania ligowe"):
         st.switch_page("pages/eklapa_streamlit_2.py")
