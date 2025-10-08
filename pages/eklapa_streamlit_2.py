@@ -28,7 +28,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 12px !important;
 }
 th, td {
     text-align: center !important;
@@ -55,7 +55,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 12px !important;
 }
 th, td {
     text-align: center !important;
