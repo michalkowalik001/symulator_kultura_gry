@@ -27,7 +27,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: sans-serif;
-    font-size: 10px;
+    font-size: 12px;
 }
 th, td {
     text-align: center !important;
@@ -169,7 +169,7 @@ with st.container(border = False):
             
             Zainteresowany? Najpierw jednak musimy dowiedzieć się więcej o Tobie i Twoich potrzebach. 
 
-            📄 **Wypełnij krótką [ankietę](https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog)** 📄
+            📄 **[Wypełnij krótką ankietę](https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog)** 📄
         """)
 #####
 st.subheader("Największe zaskoczenia", divider="gray")
