@@ -9,7 +9,7 @@ import time
 import altair as alt
 import matplotlib.pyplot as plt
 import seaborn as sns
-from data import df, df1, df2, df3, df4, df5, calculate_elo_wdl, szanse
+from data.data import df, df1, df2, df3, df4, df5, calculate_elo_wdl, szanse
 from utils.sidebar import show_sidebar
 
 
