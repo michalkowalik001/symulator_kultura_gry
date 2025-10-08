@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-BASE_DIR = os.path.dirname(__file__)
+BASE_DIR = os.getcwd()
 
 
 def df():
