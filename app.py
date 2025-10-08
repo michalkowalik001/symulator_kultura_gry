@@ -20,7 +20,6 @@ st.markdown(hide_default_sidebar, unsafe_allow_html=True)
 show_sidebar()
 
 
-col1, col2 = st.columns(2)
 
 card_style = """
     <div style="
@@ -35,9 +34,7 @@ card_style = """
         </a>
     </div>
 """
-
-with col1:
-    st.markdown(
+st.markdown(
         card_style.format(
             url="https://twoja-strona.pl",
             emoji="📊",
@@ -46,8 +43,7 @@ with col1:
         unsafe_allow_html=True
     )
 
-with col2:
-    st.markdown(
+st.markdown(
         card_style.format(
             url="https://twoja-strona.pl",
             emoji="⚽️",
