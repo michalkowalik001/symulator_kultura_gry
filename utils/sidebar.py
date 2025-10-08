@@ -21,8 +21,8 @@ html_code = """
     """
 
 def show_sidebar():
-    # ----- SIDEBAR -----
-    st.sidebar.image("/Users/michalkowalik/Desktop/Kultura Gry/Logo/logo_czarne.png", width=600)
+    logo_path = os.path.join(BASE_DIR, "images", "logo_czarne.png")
+    st.sidebar.image(logo_path, width=600)
 
     st.sidebar.markdown("### Nawigacja")
     st.sidebar.markdown("- Strona główna")
