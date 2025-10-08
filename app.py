@@ -26,8 +26,17 @@ card_style = """
     padding: 20px; 
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
 ">
-    <a href="{url}" target="_blank">{emoji} {text}</a>
+    <a href="{url}" target="_blank" style="
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+    ">
+        {emoji} {text}
+    </a>
 </div>
 """
 
@@ -48,6 +57,7 @@ st.markdown(
     ),
     unsafe_allow_html=True
 )
+
 
 
 # Pierwsza karta - ankieta i newsletter
