@@ -94,8 +94,5 @@ def show_sidebar():
     unsafe_allow_html=True
     )
 
-    st.sidebar.markdown("""
-            KulturaGry.pl; Michał Kowalik, 2025. Wszystkie prawa zastrzeżone.
-        """)
 
         
