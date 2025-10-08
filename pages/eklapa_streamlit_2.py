@@ -171,48 +171,6 @@ with st.container(border = False):
 
             📄 **[Wypełnij krótką ankietę](https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog)** 📄
         """)
-#####
-st.subheader("Największe zaskoczenia", divider="gray")
-df5['min_perf'] = df5[['home_performance', 'away_performance']].min(axis=1)
-lowest_rows = df5.nsmallest(3, 'min_perf')
-cols = st.columns(3)
-
-for i, col in enumerate(cols):
-    if i < len(lowest_rows):  # żeby nie wyszło poza zakres
-        with col:
-            with st.container(border=True):
-                col_a2, col_b2, col_c2 = st.columns(3)
-
-                # Home
-                with col_a2:
-                    with st.container():
-                        st.markdown(
-                            f"<p style='text-align: center; font-size:18px; font-weight: bold; font-family:sans-serif;'>{lowest_rows.iloc[i]['Home']}</p>",
-                            unsafe_allow_html=True)
-                        st.markdown(
-                            f"<p style='text-align: center; font-size:14px; font-weight:normal; font-family:sans-serif;'>{lowest_rows.iloc[i]['HomeElo']:.0f} ELO</p>",
-                            unsafe_allow_html=True)
-
-                # Score
-                with col_b2:
-                    with st.container():
-                        st.markdown(
-                            f"<p style='text-align: center; font-size:18px; font-weight: bold; font-family:sans-serif;'>{lowest_rows.iloc[i]['Score']}</p>",
-                            unsafe_allow_html=True)
-                        st.markdown(
-                            f"<p style='text-align: center; font-size:14px; font-weight:normal; font-family:sans-serif;'>{lowest_rows.iloc[i]['Date'].strftime('%d-%m-%Y')}</p>",
-                            unsafe_allow_html=True)
-
-                # Away
-                with col_c2:
-                    with st.container():
-                        st.markdown(
-                            f"<p style='text-align: center; font-size:18px; font-weight: bold; font-family:sans-serif;'>{lowest_rows.iloc[i]['Away']}</p>",
-                            unsafe_allow_html=True)
-                        st.markdown(
-                            f"<p style='text-align: center; font-size:14px; font-weight:normal; font-family:sans-serif;'>{lowest_rows.iloc[i]['AwayElo']:.0f} ELO</p>",
-                            unsafe_allow_html=True)
-
 
 #########
 cols = [f"{i}" for i in range(1, 19)]
@@ -220,6 +178,49 @@ styled = df.style.format({col: "{:.1%}" for col in cols}).background_gradient(cm
 st.subheader("Szanse na mistrzostwo", divider="gray")
 st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
 st.markdown(styled.to_html(index='Team'), unsafe_allow_html=True)
+
+#####
+
+st.subheader("Największe zaskoczenia", divider="gray")
+
+df5['min_perf'] = df5[['home_performance', 'away_performance']].min(axis=1)
+lowest_rows = df5.nsmallest(3, 'min_perf')
+
+for i in range(len(lowest_rows)):
+    row = lowest_rows.iloc[i]
+    with st.container(border=True):
+        col_a2, col_b2, col_c2 = st.columns(3)
+
+        # Home
+        with col_a2:
+            st.markdown(
+                f"<p style='text-align: center; font-size:18px; font-weight: bold; font-family:sans-serif;'>{row['Home']}</p>",
+                unsafe_allow_html=True)
+            st.markdown(
+                f"<p style='text-align: center; font-size:14px; font-weight:normal; font-family:sans-serif;'>{row['HomeElo']:.0f} ELO</p>",
+                unsafe_allow_html=True)
+
+        # Score
+        with col_b2:
+            st.markdown(
+                f"<p style='text-align: center; font-size:18px; font-weight: bold; font-family:sans-serif;'>{row['Score']}</p>",
+                unsafe_allow_html=True)
+            st.markdown(
+                f"<p style='text-align: center; font-size:14px; font-weight:normal; font-family:sans-serif;'>{row['Date'].strftime('%d-%m-%Y')}</p>",
+                unsafe_allow_html=True)
+
+        # Away
+        with col_c2:
+            st.markdown(
+                f"<p style='text-align: center; font-size:18px; font-weight: bold; font-family:sans-serif;'>{row['Away']}</p>",
+                unsafe_allow_html=True)
+            st.markdown(
+                f"<p style='text-align: center; font-size:14px; font-weight:normal; font-family:sans-serif;'>{row['AwayElo']:.0f} ELO</p>",
+                unsafe_allow_html=True)
+
+        # odstęp między kontenerami
+        st.markdown("<div style='height: 15px'></div>", unsafe_allow_html=True)
+
 
 ####
 st.subheader("Obecna tabela", divider="gray")
