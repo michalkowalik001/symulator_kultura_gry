@@ -27,7 +27,7 @@ card_style = """
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 ">
-    {content}
+    <a href="{url}" target="_blank">{emoji} {text}</a>
 </div>
 """
 
@@ -40,9 +40,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Odstęp między kartami
-st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)
-
 st.markdown(
     card_style.format(
         url="https://twoja-strona.pl",
@@ -51,7 +48,6 @@ st.markdown(
     ),
     unsafe_allow_html=True
 )
-
 
 
 # Pierwsza karta - ankieta i newsletter
