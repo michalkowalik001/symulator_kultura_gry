@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from data import buy_cofee
+from data.data import buy_cofee
 from utils.sidebar import show_sidebar
 import streamlit.components.v1 as components
 
