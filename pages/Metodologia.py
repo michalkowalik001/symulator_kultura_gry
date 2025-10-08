@@ -9,11 +9,18 @@ import time
 import altair as alt
 import matplotlib.pyplot as plt
 import seaborn as sns
-from data import df, df1, df2, df3, df4, df5, calculate_elo_wdl, szanse
+from data.data import df, df1, df2, df3, df4, df5, calculate_elo_wdl, szanse
 from utils.sidebar import show_sidebar
 
 
 st.set_page_config(layout="wide")
+
+hide_default_sidebar = """
+    <style>
+    [data-testid="stSidebarNav"] {display: none;}
+    </style>
+"""
+st.markdown(hide_default_sidebar, unsafe_allow_html=True)
 
 show_sidebar()
 
