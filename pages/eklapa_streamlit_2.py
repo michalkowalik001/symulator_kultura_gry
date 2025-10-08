@@ -41,6 +41,33 @@ tr:nth-child(even) td {
 </style>
 """
 
+table_style_1 = """
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    font-size: 11px;
+}
+th, td {
+    text-align: center !important;
+    padding: 8px;
+}
+th {
+    font-weight: bold;
+    background-color: #e0e0e0;  /* szare tło nagłówków */
+}
+/* obramowanie tabeli i komórek */
+table, th, td {
+    border: 1px solid #ddd;
+}
+/* kolorowanie co drugiego wiersza danych (nie nagłówków) */
+tr:nth-child(even) td {
+    background-color: #f0f0f0;
+}
+</style>
+"""
+
 # Wczytanie danych
 df = df()
 df1 = df1()
@@ -60,8 +87,8 @@ df4 = df4()
 df5 = df5()
 df6 = df6()
 
-df2_html_table = table_style + df2.to_html(index=False, escape=False)
-df3_html_table = table_style + df3[cols1].to_html(index=False, escape=False)
+df2_html_table = table_style_1 + df2.to_html(index=False, escape=False)
+df3_html_table = table_style_1 + df3[cols1].to_html(index=False, escape=False)
 
 ###########
 
