@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image
 from data.data import df, df1, df2, df3, df4, df5, df6, calculate_elo_wdl, performance_viz
 from utils.sidebar import show_sidebar
+import streamlit.components.v1 as components
 
 st.set_page_config(layout="centered")
 
@@ -227,3 +228,60 @@ st.subheader("Obecna tabela", divider="gray")
 cols2=['Pozycja', 'Drużyna', "Mecze", "Punkty", 'Wygrane', 'Remisy', 'Porażki', 'GZ', 'GS']
 tabela_html = table_style + df3[cols2].to_html(index=False, escape=False)
 st.markdown(tabela_html, unsafe_allow_html=True)
+####
+
+st.write("Podoba Ci się nasz symulator ligowy? Stworzenie go pochłonęło sporo pracy. Wesprzyj nas, stawiając nam wirtualną kawę!")
+html_buycoffee = """
+<div style="width: 100%; max-width: 600px; font-family: Arial, sans-serif; margin: auto;">
+    <div style="
+        box-sizing: border-box;
+        background-color: #FFFFFF;
+        padding: 16px;
+        border-radius: 16px;
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+        color: #000000DE;
+        text-align: center;
+    ">
+        <h3 style="font-size: 18px; font-weight: 600; line-height: 1.5; margin: 0;">
+            ☕ Postaw kawę za:
+        </h3>
+    </div>
+
+    <div style="display: flex; gap: 12px; margin-top: 16px; justify-content: center;">
+        <a href="https://buycoffee.to/kulturagry?coffeeSize=small" 
+           style="display: flex; flex-direction: column; justify-content: center; align-items: center;
+                  padding: 16px; border-radius: 16px;
+                  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+                  width: 100%; max-width: 150px;
+                  text-align: center; background-color: #FFFFFF; color: #000000DE; text-decoration: none;"
+           target="_blank" title="Postaw kawę za: 5 zł">
+            <img src="https://buycoffee.to/img/coffee-small-white.svg" alt="small coffee icon" style="width: 36px; height: 36px;" />
+            <span style="font-size: 16px; font-weight: 700; margin-top: 8px; line-height: 1.5;">5 zł</span>
+        </a>
+
+        <a href="https://buycoffee.to/kulturagry?coffeeSize=medium" 
+           style="display: flex; flex-direction: column; justify-content: center; align-items: center;
+                  padding: 16px; border-radius: 16px;
+                  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+                  width: 100%; max-width: 150px;
+                  text-align: center; background-color: #FFFFFF; color: #000000DE; text-decoration: none;"
+           target="_blank" title="Postaw kawę za: 10 zł">
+            <img src="https://buycoffee.to/img/coffee-medium-white.svg" alt="medium coffee icon" style="width: 36px; height: 36px;" />
+            <span style="font-size: 16px; font-weight: 700; margin-top: 8px; line-height: 1.5;">10 zł</span>
+        </a>
+
+        <a href="https://buycoffee.to/kulturagry?coffeeSize=large" 
+           style="display: flex; flex-direction: column; justify-content: center; align-items: center;
+                  padding: 16px; border-radius: 16px;
+                  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+                  width: 100%; max-width: 150px;
+                  text-align: center; background-color: #FFFFFF; color: #000000DE; text-decoration: none;"
+           target="_blank" title="Postaw kawę za: 15 zł">
+            <img src="https://buycoffee.to/img/coffee-large-white.svg" alt="large coffee icon" style="width: 36px; height: 36px;" />
+            <span style="font-size: 16px; font-weight: 700; margin-top: 8px; line-height: 1.5;">15 zł</span>
+        </a>
+    </div>
+</div>
+"""
+
+components.html(html_buycoffee, height=300, scrolling=False)
