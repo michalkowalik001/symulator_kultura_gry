@@ -36,7 +36,6 @@ def df2():
 def df3():
     df3_path = os.path.join(BASE_DIR, "data", "tabela_eklapa.xlsx")
     df3 = pd.read_excel(df3_path)
-    df3 = pd.read_excel('/Users/michalkowalik/Desktop/eklapa_predyktor/tabela_eklapa.xlsx')
     df3 = df3.sort_values('exp_points', ascending = False)
     return df3
 
