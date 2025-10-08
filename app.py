@@ -64,5 +64,4 @@ card(content_newsletter)
 
 # Czwarta karta - buy_coffee
 content_coffee = "<p>☕ Wspomóż naszą pracę i rozwój kursu!</p>"
-card(content_coffee)
-buy_cofee()
+card(content_html=content_coffee, inner_callable=buy_cofee)
