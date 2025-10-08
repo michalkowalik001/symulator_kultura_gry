@@ -90,6 +90,7 @@ st.markdown(f"""
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: center;
+    font-size: 18px;
 ">
     {content_1}
 </div>
