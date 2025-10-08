@@ -176,9 +176,18 @@ with st.container(border = False):
 #########
 cols = [f"{i}" for i in range(1, 19)]
 styled = df.style.format({col: "{:.1%}" for col in cols}).background_gradient(cmap="Greens", subset=cols)
+
 st.subheader("Szanse na mistrzostwo", divider="gray")
 st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
-st.markdown(styled.to_html(index='Team'), unsafe_allow_html=True)
+html_table = styled.to_html(index='Team')
+scrollable_html = f"""
+<div style="overflow-x: auto; white-space: nowrap;">
+{html_table}
+</div>
+"""
+
+st.markdown(table_style, unsafe_allow_html=True)
+st.markdown(scrollable_html, unsafe_allow_html=True)
 
 #####
 
