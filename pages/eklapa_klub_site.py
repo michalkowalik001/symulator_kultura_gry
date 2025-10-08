@@ -13,7 +13,7 @@ from data.data import df, df1, df2, df3, df4, df5, calculate_elo_wdl, szanse
 from utils.sidebar import show_sidebar
 
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 
 show_sidebar()
 
