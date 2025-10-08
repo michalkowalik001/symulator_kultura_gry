@@ -22,32 +22,40 @@ show_sidebar()
 
 col1, col2 = st.columns(2)
 
+card_style = """
+    <div style="
+        background-color: #f0f0f0; 
+        border-radius: 15px; 
+        padding: 20px; 
+        text-align: center; 
+        transition: transform 0.2s;
+    " onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+        <a href="{url}" target="_blank" style="text-decoration: none; color: #000000;">
+            <h3 style="margin: 0;">{emoji} {text} {emoji}</h3>
+        </a>
+    </div>
+"""
+
 with col1:
-    with st.container(border=True):
-        st.markdown(
-            """
-            <a href="https://twoja-strona.pl" target="_blank"
-               style="text-decoration: none;">
-                <h3 style="font-weight: normal; color: #000000 !important; text-align: center;">
-                    📊 Statystyki i przewidywania ligowe 📊
-                </h3>
-            </a>
-            """,
-            unsafe_allow_html=True
-        )
+    st.markdown(
+        card_style.format(
+            url="https://twoja-strona.pl",
+            emoji="📊",
+            text="Statystyki i przewidywania ligowe"
+        ),
+        unsafe_allow_html=True
+    )
+
 with col2:
-    with st.container(border=True):
-        st.markdown(
-            """
-            <a href="https://twoja-strona.pl" target="_blank"
-               style="text-decoration: none;">
-                <h3 style="font-weight: normal; color: #000000 !important; text-align: center;">
-                    ⚽️ Statystyki i przewidywania zespołowe ⚽️
-                </h3>
-            </a>
-            """,
-            unsafe_allow_html=True
-        )
+    st.markdown(
+        card_style.format(
+            url="https://twoja-strona.pl",
+            emoji="⚽️",
+            text="Statystyki i przewidywania zespołowe"
+        ),
+        unsafe_allow_html=True
+    )
+
 
 col1, col2 = st.columns(2)
 
