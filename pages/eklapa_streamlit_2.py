@@ -100,7 +100,16 @@ df3_html_table = table_style_1 + df3[cols1].to_html(index=False, escape=False)
 ###########
 
 st.subheader("Przewidywana tabela końcowa", divider="gray")
-st.markdown(df3_html_table, unsafe_allow_html=True)
+
+scrollable_df3 = f"""
+<div style="overflow-x: auto; white-space: nowrap;">
+{df3_html_table}
+</div>
+"""
+
+st.markdown(scrollable_df3, unsafe_allow_html=True)
+
+#####
 
 st.subheader("Forma względem oczekiwań", divider="gray")
 performance_viz(df6)
