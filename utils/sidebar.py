@@ -25,11 +25,11 @@ def show_sidebar():
     #st.sidebar.image(logo_path, width=600)
 
     st.sidebar.markdown("### Nawigacja")
-    st.sidebar.markdown("- Strona główna")
-    st.sidebar.markdown("- Statystyki i przewidywania ligowe")
-    st.sidebar.markdown("- Statystyki i przewidywania klubowe")
-    st.sidebar.markdown("- Kontakt")
-    st.sidebar.markdown("- Metodologia")
+    st.sidebar.markdown("🏠 Strona główna")
+    st.sidebar.markdown("📊 Statystyki i przewidywania ligowe")
+    st.sidebar.markdown("⚽ Statystyki i przewidywania klubowe")
+    st.sidebar.markdown("📞 Kontakt")
+    st.sidebar.markdown("🔢 Metodologia")
 
     st.sidebar.markdown("---")
 
