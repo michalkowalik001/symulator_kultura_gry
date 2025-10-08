@@ -126,7 +126,7 @@ scrollable_df3 = f"""
 st.markdown(scrollable_df3, unsafe_allow_html=True)
 #####
 
-st.subheader("Forma względem oczekiwań", divider="gray")
+st.subheader("Forma zespołów", divider="gray")
 performance_viz(df6)
 
 
