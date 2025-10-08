@@ -102,7 +102,7 @@ def performance_viz(df):
         orientation='h',
         color='color',
         color_discrete_map={'#0EC262':'#0EC262', '#D6320F':'#D6320F'},
-        title='Performance drużyn względem oczekiwań',
+        title='Forma oczekiwana vs. rzeczywista',
         labels={'performance':'Średnia punktów na mecz (rzeczywiste - oczekiwane)', 'Team':'Drużyna'}
     )
 
