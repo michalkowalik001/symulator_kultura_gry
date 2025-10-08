@@ -46,17 +46,13 @@ selected_team = st.selectbox("**Wybierz zespół**", teams)
 
 st.header(selected_team, divider = 'grey')
 
-@st.cache_data
 df = df()
-@st.cache_data
 df2 = df2()
 df2 = df2[(df2['Home']==selected_team) | (df2['Away']==selected_team)].sort_values(by = 'Date')
 df2.rename(columns = {'Home':'Gospodarz','Away':'Gość','Date':'Data', 'Day':"Dzień", "Time":"Czas", "Kolejka":"Wk", "HomeElo":"Gospodarz ELO",	
                       "AwayElo":"Gość ELO", "p_home_win":"Szansa gospodarz", "p_draw":"Szansa remis", "p_away_win":"Szansa gość"}, inplace = True)
 df2_html_table = df2.to_html(index=False, escape=False)
-@st.cache_data
 df4 = df4()
-@st.cache_data
 df5 = df5()
 df5 = df5[(df5['Home']==selected_team) | (df5['Away']==selected_team)].sort_values(by = 'Date')
 exp_points = f"Oczekiwane Punkty"
