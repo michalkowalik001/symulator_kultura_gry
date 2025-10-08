@@ -109,6 +109,10 @@ scrollable_df3 = f"""
 
 st.markdown(scrollable_df3, unsafe_allow_html=True)
 
+selected_cols = st.multiselect("Wybierz kolumny do wyświetlenia", cols, default=cols[:6])
+st.markdown(df3.to_html(index='Team', subset=selected_cols), unsafe_allow_html=True)
+
+
 #####
 
 st.subheader("Forma względem oczekiwań", divider="gray")
