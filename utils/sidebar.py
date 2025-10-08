@@ -30,20 +30,13 @@ def show_sidebar():
     # ----- NAWIGACJA -----
     st.sidebar.markdown("### Nawigacja")
 
-    if st.sidebar.button("🏠 Strona główna"):
-        st.switch_page("app.py")
+    st.sidebar.page_link("app.py", label="🏠 Strona główna")
+    st.sidebar.page_link("pages/eklapa_streamlit_2.py", label="📊 Statystyki i przewidywania ligowe")
+    st.sidebar.page_link("pages/eklapa_klub_site.py", label="⚽ Statystyki i przewidywania klubowe")
+    st.sidebar.page_link("pages/kontakt.py", label="📞 Kontakt")
+    st.sidebar.page_link("pages/Metodologia.py", label="🔢 Metodologia")
 
-    if st.sidebar.button("📊 Statystyki i przewidywania ligowe"):
-        st.switch_page("pages/eklapa_streamlit_2.py")
-
-    if st.sidebar.button("⚽ Statystyki i przewidywania klubowe"):
-        st.switch_page("pages/eklapa_klub_site.py")
-
-    if st.sidebar.button("📞 Kontakt"):
-        st.switch_page("pages/kontakt.py")
-
-    if st.sidebar.button("🔢 Metodologia"):
-        st.switch_page("pages/Metodologia.py")
+    st.sidebar.markdown("---")
 
     st.sidebar.markdown("---")
 
