@@ -20,7 +20,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 10px;
 }
 th, td {
     text-align: center !important;
@@ -94,9 +94,7 @@ if home_adv:
     W, D, L = calculate_elo_wdl(elo_home+63, elo_away)
 else:
     W, D, L = calculate_elo_wdl(elo_home, elo_away)
-   
-   
-    
+
 
 col_a2, col_b2, col_c2 = st.columns(3)
 
