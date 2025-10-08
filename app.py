@@ -43,7 +43,7 @@ card_style = """
 
 st.markdown(
     card_style.format(
-        url="https://twoja-strona.pl",
+        url="https://symulator-kultura-gry.streamlit.app/~/+/eklapa_streamlit_2",
         emoji="📊",
         text="Statystyki i przewidywania ligowe"
     ),
@@ -52,7 +52,7 @@ st.markdown(
 
 st.markdown(
     card_style.format(
-        url="https://twoja-strona.pl",
+        url="https://symulator-kultura-gry.streamlit.app/~/+/eklapa_klub_site",
         emoji="⚽️",
         text="Statystyki i przewidywania zespołowe"
     ),
