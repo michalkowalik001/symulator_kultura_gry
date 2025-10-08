@@ -70,7 +70,7 @@ src="https://sy0kh.mjt.lu/wgt/sy0kh/0phq/form?c=f6f3e641" width="100%" style="he
 """
 
 content_1 = """
-<p><b>Chcemy stworzyć kurs, w którym pokażemy jak zostać analitycznym magikiem i być w stanie przewidywać i symulować wyniki meczów i rozgrywek ligowych. To wcale nie takie trudne.</b></p>
+<p><b>Chcemy stworzyć kurs, w którym pokażemy jak zostać analitycznym magikiem i być w stanie przewidywać i symulować wyniki meczów i rozgrywek ligowych.</b></p>
 
 <p>Niezależnie czy analizujesz dane na co dzień, czy jesteś zupełnie zielony i nie masz pojęcia jak się do tego zabrać. Przeprowadzimy Cię przez cały proces od A do Z.</p>
 
