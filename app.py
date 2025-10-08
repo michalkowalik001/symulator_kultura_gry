@@ -23,12 +23,12 @@ card_style = """
 <div style="
     background-color: #f9f9f9; 
     border-radius: 15px; 
-    padding: 20px; 
+    padding: 30px; 
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    font-size: 18px;
+    text-align: center;
+    font-size: 24px;
     color: #333;
-    text-decoration: none;
 ">
     <a href="{url}" target="_blank" style="
         text-decoration: none;
@@ -39,6 +39,7 @@ card_style = """
     </a>
 </div>
 """
+
 
 st.markdown(
     card_style.format(
