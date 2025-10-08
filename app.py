@@ -10,13 +10,12 @@ st.set_page_config(
     layout="wide"
 )
 
-#st.markdown("""
-#    <style>
-#    [data-testid="stSidebarNav"] {
-#        display: True;
-#    }
-#    </style>
-#""", unsafe_allow_html=True)
+hide_default_sidebar = """
+    <style>
+    [data-testid="stSidebarNav"] {display: none;}
+    </style>
+"""
+st.markdown(hide_default_sidebar, unsafe_allow_html=True)
 
 show_sidebar()
 
