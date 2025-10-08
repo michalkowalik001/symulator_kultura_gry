@@ -129,7 +129,7 @@ tr:nth-child(even) td {
 }
 </style>
 """
-
+####
 st.subheader("Kurs symulacji i tworzenia dashboardów", divider = 'grey')
 
 with st.container(border = False):
@@ -138,9 +138,10 @@ with st.container(border = False):
             
             Zainteresowany? Najpierw jednak musimy dowiedzieć się więcej o Tobie i Twoich potrzebach. 
 
-            📄 **Wypełnij krótką [ankietę](https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog)** 📄
+            📄 **[Wypełnij krótką ankietę](https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog)** 📄
         """)
 
+####
 st.subheader("Dotychczasowe mecze", divider="gray")
 st.markdown(table_style + df5_html_table, unsafe_allow_html=True)
 
