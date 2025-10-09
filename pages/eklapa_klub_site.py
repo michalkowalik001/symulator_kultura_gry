@@ -130,6 +130,26 @@ tr:nth-child(even) td {
 </style>
 """
 ####
+with st.expander("Jak działa system ELO?"):
+    st.write("""
+    Idea jest prosta – za wygrane zyskuje się punkty, za porażki punkty się traci. 
+    Wygrane z zespołem silniejszym przynoszą więcej punktów niż wygrane z zespołem słabszym. 
+    Przegrane z zespołem słabszym oznaczają większą stratę punktów niż przegrane z zespołem silniejszym.
+
+    **Przykład:**  
+    Ranking Realu Madryt wynosi 1 950, ranking Legii Warszawa wynosi 1 500, ranking Termaliki Bruk-Bet Nieciecza wynosi 1 350.
+
+    - Szanse Legii na wygraną z Realem szacuje się na 7%.  
+      - za wygraną zyskuje 19 punktów  
+      - za remis 9 punktów  
+      - za przegraną traci 1,5 punktu  
+
+    - Szanse Legii na wygraną z Termaliką szacuje się na 70%.  
+      - za wygraną zyskuje 6 punktów  
+      - za remis traci 4 punkty  
+      - za przegraną traci 14 punktów
+    """)
+####
 st.subheader("Kurs symulacji i tworzenia dashboardów", divider = 'grey')
 
 with st.container(border = False):
