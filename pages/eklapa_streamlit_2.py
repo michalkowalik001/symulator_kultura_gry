@@ -135,8 +135,10 @@ scrollable_df3 = f"""
 {df3_html_table}
 </div>
 """
-
 st.markdown(scrollable_df3, unsafe_allow_html=True)
+
+with st.expander("O co chodzi w tym wykresie?"):
+    st.write("""'Na wykresie przedstawiona jest średnia różnicy punktów rzeczywistych (uzyskanych w rozgrywkach ligowych) i punktów oczekiwanych (wyznaczonych na podstawie symulacji).'""")
 #####
 
 st.subheader("Forma zespołów", divider="gray")
