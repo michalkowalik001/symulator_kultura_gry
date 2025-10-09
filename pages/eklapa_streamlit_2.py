@@ -118,6 +118,7 @@ scrollable_html = f"""
 
 st.markdown(table_style, unsafe_allow_html=True)
 st.markdown(scrollable_html, unsafe_allow_html=True)
+st.markdown("Więcej w karcie ['Statystyki i przewidywania klubowe'](https://symulator-kultura-gry.streamlit.app/eklapa_klub_site)", unsafe_allow_html=True)
 
 ###########
 
@@ -138,7 +139,7 @@ performance_viz(df6)
 
 st.subheader("Najbliższe mecze", divider="gray")
 scrollable_df2 = f"""
-<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 5px;">
+<div style="max-height: 300px; overflow-y: auto; padding: 5px;">
     {df2_html_table}
 </div>
 """
