@@ -98,14 +98,13 @@ df2_html_table = table_style_1 + df2.to_html(index=False, escape=False)
 df3_html_table = table_style_1 + df3[cols1].to_html(index=False, escape=False)
 
 #########
-st.write(df.columns.to_list())
 #cols = [f"{i}" for i in range(1, 19)]
-cols = ["1", "2", "3", "4", "5", "16", "17", "18"]
-
+cols = ["Team", "1", "2", "3", "4", "5", "16", "17", "18"]
 styled = (
-    df.style
-    .format({col: "{:.1%}" for col in cols})
-    .background_gradient(cmap="Greens", subset=cols)
+    df[cols]
+    .style
+    .format({col: "{:.1%}" for col in cols if col != "Team"})
+    .background_gradient(cmap="Greens", subset=[c for c in cols if c != "Team"])
 )
 
 st.subheader("Szanse na mistrzostwo", divider="gray")
