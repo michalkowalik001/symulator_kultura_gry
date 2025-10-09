@@ -109,7 +109,7 @@ styled = (
 
 st.subheader("Szanse na mistrzostwo", divider="gray")
 st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
-html_table = styled.to_html()
+html_table = styled.to_html(index = False)
 scrollable_html = f"""
 <div style="overflow-x: auto; white-space: nowrap;">
 {html_table}
