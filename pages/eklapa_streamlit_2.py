@@ -206,7 +206,7 @@ with col_c2:
             unsafe_allow_html=True)
 #####
 
-st.subheader("Kurs symulacji i tworzenia dashboardów", divider = 'grey')
+st.subheader("Kurs tworzenia symulacji i dashboardów", divider = 'grey')
 
 with st.container(border = False):
         st.markdown("""
