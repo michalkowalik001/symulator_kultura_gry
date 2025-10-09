@@ -119,7 +119,13 @@ scrollable_html = f"""
 st.markdown(table_style, unsafe_allow_html=True)
 st.markdown(scrollable_html, unsafe_allow_html=True)
 st.markdown("Więcej w karcie ['Statystyki i przewidywania klubowe'](https://symulator-kultura-gry.streamlit.app/eklapa_klub_site)", unsafe_allow_html=True)
-
+with st.expander("Jak działa ta symulacja?"):
+    st.write("""
+    Na podstawie różnic w sile zespołów (wskaźnik ELO) wyznaczany jest rozkład prawdopodobieństwa liczby goli obu drużyn.
+    Następnie, na bazie rozkładu, każdy mecz (wynik) symulowany jest kilka tysięcy razy. W efekcie powstaje kilka tysięcy finalnych tabel ligowych. 
+    Na ich podstawie wyznacza się szansę każdego zespołu na zakończenie ligi na poszczególnym miejscu w tabeli. 
+    Szczegóły w zakładce 'Metodologia'.
+    """)
 ###########
 
 st.subheader("Przewidywana tabela końcowa", divider="gray")
