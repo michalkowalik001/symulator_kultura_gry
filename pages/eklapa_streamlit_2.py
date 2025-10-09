@@ -107,7 +107,7 @@ styled = (
     .background_gradient(cmap="Greens", subset=[c for c in cols if c != "Team"])
 )
 
-st.subheader("Szanse na mistrzostwo", divider="gray")
+st.subheader("Szanse na poszczególne pozycje", divider="gray")
 st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
 html_table = styled.to_html(index = False)
 scrollable_html = f"""
