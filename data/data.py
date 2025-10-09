@@ -9,9 +9,17 @@ BASE_DIR = os.getcwd()
 def df():
     df_path = os.path.join(BASE_DIR, "data", "symulacje.xlsx")
     df = pd.read_excel(df_path)
-    for i in range(1,19):
-        df.rename(columns = {f'Pos_{i}':f"{i}"}, inplace = True)
-    df = df.sort_values(by = ['1', '2'], ascending = False).reset_index(drop=True)
+
+    # zmiana nazw kolumn
+    for i in range(1, 19):
+        df.rename(columns={f'Pos_{i}': f"{i}"}, inplace=True)
+
+    # ustawienie 0 dla wartości < 0.01 w kolumnach 1-18
+    cols = [str(i) for i in range(1, 19)]
+    df[cols] = df[cols].mask(df[cols] < 0.01, 0)
+
+    # sortowanie
+    df = df.sort_values(by=['1', '2'], ascending=False).reset_index(drop=True)
 
     return df
 
