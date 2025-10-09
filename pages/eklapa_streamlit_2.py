@@ -137,7 +137,12 @@ performance_viz(df6)
 
 
 st.subheader("Najbliższe mecze", divider="gray")
-st.markdown(df2_html_table, unsafe_allow_html=True)
+scrollable_df2 = f"""
+<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 5px;">
+    {df2_html_table}
+</div>
+"""
+st.markdown(scrollable_df2, unsafe_allow_html=True)
 
 
 st.subheader("Oblicz szanse wygranej", divider="gray")
