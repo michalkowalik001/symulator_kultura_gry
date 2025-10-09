@@ -79,6 +79,14 @@ df5_html_table = df5[['Data', 'Gospodarz','Wynik','Gość', exp_points, points]]
 
 szanse(df, selected_team)
 
+with st.expander("Jak działa ta symulacja?"):
+    st.write("""
+    Na podstawie różnic w sile zespołów (wskaźnik ELO) wyznaczany jest rozkład prawdopodobieństwa liczby goli obu drużyn.
+    Następnie, na bazie rozkładu, każdy mecz (wynik) symulowany jest kilka tysięcy razy. W efekcie powstaje kilka tysięcy finalnych tabel ligowych. 
+    Na ich podstawie wyznacza się szansę każdego zespołu na zakończenie ligi na poszczególnym miejscu w tabeli. 
+    Szczegóły w zakładce 'Metodologia'.
+    """)
+
 team_df = df4[(df4['Team'] == selected_team)&(df4['To']>"2015-01-01")].sort_values('To')
 
 fig = px.line(
