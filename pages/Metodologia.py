@@ -29,7 +29,7 @@ st.title("Metodologia")
 st.write("Źródła danych: https://fbref.com/en/; http://clubelo.com")
 st.write("Metodologia symulacji bazujacych na ELO na podstawie Aleks Kapich, 2025, Mathematics Behind Predicting Football Results — the Poisson Model, Skellam Distribution & ELO Ratings [https://medium.com/@aleks-kapich/mathematics-behind-predicting-football-results-the-poisson-model-skellam-distribution-elo-bf50b8c5727f]")
 
-st.write("Szczegóły działania systemu ELO: http://clubelo.com/System)
+st.write("Szczegóły działania systemu ELO: http://clubelo.com/System")
 
 st.write("Tabela 'Przewidywana tabela końcowa' została uszeregowana malejąco według kolumny 'Oczekiwane punkty'. Wartości kolumny 'Oczekiwane punkty' (1) oznaczają sumę punktów zespołu we wszystkich symulacjach, podzieloną przez liczbę symulacji.")
 
