@@ -11,7 +11,7 @@ def df():
     df = pd.read_excel(df_path)
     for i in range(1,19):
         df.rename(columns = {f'Pos_{i}':f"{i}"}, inplace = True)
-    df = df.sort_values(by = '1', ascending = False).reset_index(drop=True)
+    df = df.sort_values(by = ['1', '2'], ascending = False).reset_index(drop=True)
 
     return df
 
