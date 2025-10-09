@@ -98,13 +98,14 @@ df2_html_table = table_style_1 + df2.to_html(index=False, escape=False)
 df3_html_table = table_style_1 + df3[cols1].to_html(index=False, escape=False)
 
 #########
-#cols = [f"{i}" for i in range(1, 19)]
-cols = [1, 2, 3, 4, 5, 16, 17, 18]
+st.write(df.columns.to_list())
+cols = [f"{i}" for i in range(1, 19)]
+#cols = [1, 2, 3, 4, 5, 16, 17, 18]
 styled = df.style.format({col: "{:.1%}" for col in cols}).background_gradient(cmap="Greens", subset=cols)
 
 st.subheader("Szanse na mistrzostwo", divider="gray")
 st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
-html_table = styled.to_html(index='Team')
+html_table = styled.to_html()
 scrollable_html = f"""
 <div style="overflow-x: auto; white-space: nowrap;">
 {html_table}
