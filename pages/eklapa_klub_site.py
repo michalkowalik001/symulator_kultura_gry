@@ -93,7 +93,7 @@ fig = px.line(
     team_df,
     x='To',
     y='Elo',
-    markers=True,
+    markers=False,
     title=f'Ewolucja ELO',
     labels={'To': 'Date', 'Elo': 'Elo Rating'},
     hover_data={'To': True, 'Elo': True, 'Team': True}
