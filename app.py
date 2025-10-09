@@ -54,7 +54,7 @@ st.markdown(
     card_style.format(
         url="https://symulator-kultura-gry.streamlit.app/~/+/eklapa_klub_site",
         emoji="⚽️",
-        text="Statystyki i przewidywania zespołowe"
+        text="Statystyki i przewidywania klubowe"
     ),
     unsafe_allow_html=True
 )
