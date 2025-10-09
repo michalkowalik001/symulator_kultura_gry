@@ -263,8 +263,30 @@ for i in range(len(lowest_rows)):
 
 ####
 st.subheader("Obecna tabela", divider="gray")
-cols2=['Pozycja', 'Drużyna', "Mecze", "Punkty", 'Wygrane', 'Remisy', 'Porażki', 'GZ', 'GS']
-tabela_html = table_style + df3[cols2].to_html(index=False, escape=False)
+
+cols2 = ['Pozycja', 'Drużyna', "Mecze", "Punkty", 'Wygrane', 'Remisy', 'Porażki', 'GZ', 'GS']
+
+table_style = """
+<style>
+.scroll-table {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.scroll-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+</style>
+"""
+
+tabela_html = (
+    table_style
+    + '<div class="scroll-table">'
+    + df3[cols2].to_html(index=False, escape=False)
+    + '</div>'
+)
+
 st.markdown(tabela_html, unsafe_allow_html=True)
 ####
 st.subheader("Podoba Ci się nasz symulator ligowy?", divider = 'gray')
