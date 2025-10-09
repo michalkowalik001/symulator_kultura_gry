@@ -158,7 +158,7 @@ with st.expander("Jak działa system ELO?"):
       - za przegraną traci 14 punktów
     """)
 ####
-st.subheader("Kurs symulacji i tworzenia dashboardów", divider = 'grey')
+st.subheader("Kurs tworzenia symulacji i dashboardów", divider = 'grey')
 
 with st.container(border = False):
         st.markdown("""
