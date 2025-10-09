@@ -16,7 +16,7 @@ def df():
 
     # ustawienie 0 dla wartości < 0.01 w kolumnach 1-18
     cols = [str(i) for i in range(1, 19)]
-    df[cols] = df[cols].mask(df[cols] < 0.01, 0)
+    df[cols] = df[cols].mask(df[cols] < 0.001, 0)
 
     # sortowanie
     df = df.sort_values(by=['1', '18'], ascending=[False, True]).reset_index(drop=True)
