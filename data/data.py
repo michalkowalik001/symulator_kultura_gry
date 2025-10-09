@@ -19,7 +19,7 @@ def df():
     df[cols] = df[cols].mask(df[cols] < 0.01, 0)
 
     # sortowanie
-    df = df.sort_values(by=['1', '2'], ascending=False).reset_index(drop=True)
+    df = df.sort_values(by=['1', '18'], ascending=[False, True]).reset_index(drop=True)
 
     return df
 
