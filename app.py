@@ -40,11 +40,11 @@ card_style = """
 </div>
 """
 st.markdown(
-    card_style.format(
-        url="#",  # albo inny link, np. "https://ekstraklasa.org"
-        emoji="🏆",
-        text="Symulator Ekstraklasy. Wybierz tryb:"
-    ),
+    """
+    <div style="text-align: center; font-size: 24px; font-weight: bold;">
+        Symulator Ekstraklasy. Wybierz tryb:
+    </div>
+    """,
     unsafe_allow_html=True
 )
 
