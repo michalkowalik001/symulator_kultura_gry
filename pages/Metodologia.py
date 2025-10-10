@@ -39,5 +39,7 @@ st.write("Tabela 'Najbliższe mecze' została uszeregowana malejąco według kol
 
 st.write("W tabeli 'Szanse na mistrzostwo' i na wykresie 'Szanse na poszczególne pozycje', obliczonych symulacyjnie zgodnie z Kapich (2025) uwzględniono przewagę własnego boiska.")
 
-st.write("W symulacjach przyjmujemy założenie niezmienności ELO w przyszłości.")
+st.write("Założenia symulacji: 
+1. Niezmienność ELO w przyszłości
+2. Przewaga własnego boiska = 63 ELO")
 
