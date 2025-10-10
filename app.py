@@ -39,7 +39,12 @@ card_style = """
     </a>
 </div>
 """
-
+st.markdown(
+    card_style.format(
+        text="Symulator Ekstraklasy. Wybierz tryb:"
+    ),
+    unsafe_allow_html=True
+)
 
 st.markdown(
     card_style.format(
