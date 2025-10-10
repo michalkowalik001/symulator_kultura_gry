@@ -42,7 +42,8 @@ card_style = """
 st.markdown(
     """
     <div style="text-align: center; font-size: 24px; font-weight: bold;">
-        Symulator Ekstraklasy. Wybierz tryb:
+        🏆Symulator Ekstraklasy. Wybierz tryb:
+        
     </div>
     """,
     unsafe_allow_html=True
