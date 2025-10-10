@@ -166,13 +166,7 @@ elo_home = df1.loc[df1['Drużyna'] == home_choice, 'ELO'].values[0]
 elo_away = df1.loc[(df1['Drużyna'] == away_choice), 'ELO'].values[0]
 
 
-home_adv = st.checkbox("Uwzględnij przewagę własnego boiska")
-
-if home_adv:
-    W, D, L = calculate_elo_wdl(elo_home+63, elo_away)
-else:
-    W, D, L = calculate_elo_wdl(elo_home, elo_away)
-
+W, D, L = calculate_elo_wdl(elo_home+63, elo_away)
 
 col_a2, col_b2, col_c2 = st.columns(3)
 
