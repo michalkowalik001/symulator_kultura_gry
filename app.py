@@ -42,7 +42,7 @@ card_style = """
 st.markdown(
     card_style.format(
         url="#",  # albo inny link, np. "https://ekstraklasa.org"
-        emoji="⚽",
+        emoji="🏆",
         text="Symulator Ekstraklasy. Wybierz tryb:"
     ),
     unsafe_allow_html=True
