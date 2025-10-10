@@ -79,13 +79,21 @@ df5_html_table = df5[['Data', 'Gospodarz','Wynik','Gość', exp_points, points]]
 
 szanse(df, selected_team)
 
+with st.expander("Jak działa ta symulacja?"):
+    st.write("""
+    Na podstawie różnic w sile zespołów (wskaźnik ELO) wyznaczany jest rozkład prawdopodobieństwa liczby goli obu drużyn.
+    Następnie, na bazie rozkładu, każdy mecz (wynik) symulowany jest kilka tysięcy razy. W efekcie powstaje kilka tysięcy finalnych tabel ligowych. 
+    Na ich podstawie wyznacza się szansę każdego zespołu na zakończenie ligi na poszczególnym miejscu w tabeli. 
+    Szczegóły w zakładce 'Metodologia'.
+    """)
+
 team_df = df4[(df4['Team'] == selected_team)&(df4['To']>"2015-01-01")].sort_values('To')
 
 fig = px.line(
     team_df,
     x='To',
     y='Elo',
-    markers=True,
+    markers=False,
     title=f'Ewolucja ELO',
     labels={'To': 'Date', 'Elo': 'Elo Rating'},
     hover_data={'To': True, 'Elo': True, 'Team': True}
@@ -130,7 +138,27 @@ tr:nth-child(even) td {
 </style>
 """
 ####
-st.subheader("Kurs symulacji i tworzenia dashboardów", divider = 'grey')
+with st.expander("Jak działa system ELO?"):
+    st.write("""
+    Idea jest prosta – za wygrane zyskuje się punkty, za porażki punkty się traci. 
+    Wygrane z zespołem silniejszym przynoszą więcej punktów niż wygrane z zespołem słabszym. 
+    Przegrane z zespołem słabszym oznaczają większą stratę punktów niż przegrane z zespołem silniejszym.
+
+    **Przykład:**  
+    Ranking Realu Madryt wynosi 1 950, ranking Legii Warszawa wynosi 1 500, ranking Termaliki Bruk-Bet Nieciecza wynosi 1 350.
+
+    - Szanse Legii na wygraną z Realem szacuje się na 7%.  
+      - za wygraną zyskuje 19 punktów  
+      - za remis 9 punktów  
+      - za przegraną traci 1,5 punktu  
+
+    - Szanse Legii na wygraną z Termaliką szacuje się na 70%.  
+      - za wygraną zyskuje 6 punktów  
+      - za remis traci 4 punkty  
+      - za przegraną traci 14 punktów
+    """)
+####
+st.subheader("Kurs tworzenia symulacji i dashboardów", divider = 'grey')
 
 with st.container(border = False):
         st.markdown("""

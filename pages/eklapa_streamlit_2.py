@@ -28,7 +28,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 12px !important;
 }
 th, td {
     text-align: center !important;
@@ -55,7 +55,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 12px !important;
 }
 th, td {
     text-align: center !important;
@@ -97,6 +97,35 @@ df6 = df6()
 df2_html_table = table_style_1 + df2.to_html(index=False, escape=False)
 df3_html_table = table_style_1 + df3[cols1].to_html(index=False, escape=False)
 
+#########
+#cols = [f"{i}" for i in range(1, 19)]
+cols = ["Team", "1", "2", "3", "4", "5", "16", "17", "18"]
+styled = (
+    df[cols]
+    .style
+    .format({col: "{:.1%}" for col in cols if col != "Team"})
+    .background_gradient(cmap="Greens", subset=[c for c in cols if c != "Team"])
+)
+
+st.subheader("Szanse na poszczególne pozycje", divider="gray")
+st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
+html_table = styled.to_html(index = False)
+scrollable_html = f"""
+<div style="overflow-x: auto; white-space: nowrap;">
+{html_table}
+</div>
+"""
+
+st.markdown(table_style, unsafe_allow_html=True)
+st.markdown(scrollable_html, unsafe_allow_html=True)
+st.markdown("Więcej w karcie ['Statystyki i przewidywania klubowe'](https://symulator-kultura-gry.streamlit.app/eklapa_klub_site)", unsafe_allow_html=True)
+with st.expander("Jak działa ta symulacja?"):
+    st.write("""
+    Na podstawie różnic w sile zespołów (wskaźnik ELO) wyznaczany jest rozkład prawdopodobieństwa liczby goli obu drużyn.
+    Następnie, na bazie rozkładu, każdy mecz (wynik) symulowany jest kilka tysięcy razy. W efekcie powstaje kilka tysięcy finalnych tabel ligowych. 
+    Na ich podstawie wyznacza się szansę każdego zespołu na zakończenie ligi na poszczególnym miejscu w tabeli. 
+    Szczegóły w zakładce 'Metodologia'.
+    """)
 ###########
 
 st.subheader("Przewidywana tabela końcowa", divider="gray")
@@ -106,16 +135,23 @@ scrollable_df3 = f"""
 {df3_html_table}
 </div>
 """
-
 st.markdown(scrollable_df3, unsafe_allow_html=True)
+
 #####
 
-st.subheader("Forma względem oczekiwań", divider="gray")
+st.subheader("Forma zespołów", divider="gray")
 performance_viz(df6)
 
-
+with st.expander("O co chodzi w tym wykresie?"):
+    st.write("""'Na wykresie przedstawiona jest średnia różnicy punktów rzeczywistych (uzyskanych w rozgrywkach ligowych) i punktów oczekiwanych (wyznaczonych na podstawie symulacji).'""")
+### 
 st.subheader("Najbliższe mecze", divider="gray")
-st.markdown(df2_html_table, unsafe_allow_html=True)
+scrollable_df2 = f"""
+<div style="max-height: 300px; overflow-y: auto; padding: 5px;">
+    {df2_html_table}
+</div>
+"""
+st.markdown(scrollable_df2, unsafe_allow_html=True)
 
 
 st.subheader("Oblicz szanse wygranej", divider="gray")
@@ -130,13 +166,7 @@ elo_home = df1.loc[df1['Drużyna'] == home_choice, 'ELO'].values[0]
 elo_away = df1.loc[(df1['Drużyna'] == away_choice), 'ELO'].values[0]
 
 
-home_adv = st.checkbox("Uwzględnij przewagę własnego boiska")
-
-if home_adv:
-    W, D, L = calculate_elo_wdl(elo_home+63, elo_away)
-else:
-    W, D, L = calculate_elo_wdl(elo_home, elo_away)
-
+W, D, L = calculate_elo_wdl(elo_home+63, elo_away)
 
 col_a2, col_b2, col_c2 = st.columns(3)
 
@@ -170,7 +200,7 @@ with col_c2:
             unsafe_allow_html=True)
 #####
 
-st.subheader("Kurs symulacji i tworzenia dashboardów", divider = 'grey')
+st.subheader("Kurs tworzenia symulacji i dashboardów", divider = 'grey')
 
 with st.container(border = False):
         st.markdown("""
@@ -181,21 +211,6 @@ with st.container(border = False):
             📄 **[Wypełnij krótką ankietę](https://docs.google.com/forms/d/e/1FAIpQLSe9c5tmRgRBUVGWg2EGZorGY6Akd4O4bHsrEMFCFcleI-pyYA/viewform?usp=dialog)** 📄
         """)
 
-#########
-cols = [f"{i}" for i in range(1, 19)]
-styled = df.style.format({col: "{:.1%}" for col in cols}).background_gradient(cmap="Greens", subset=cols)
-
-st.subheader("Szanse na mistrzostwo", divider="gray")
-st.markdown("<p style='text-align: center; font-weight:normal; font-family:sans-serif;'>Pozycja w tabeli</p>", unsafe_allow_html=True)
-html_table = styled.to_html(index='Team')
-scrollable_html = f"""
-<div style="overflow-x: auto; white-space: nowrap;">
-{html_table}
-</div>
-"""
-
-st.markdown(table_style, unsafe_allow_html=True)
-st.markdown(scrollable_html, unsafe_allow_html=True)
 
 #####
 
@@ -242,8 +257,30 @@ for i in range(len(lowest_rows)):
 
 ####
 st.subheader("Obecna tabela", divider="gray")
-cols2=['Pozycja', 'Drużyna', "Mecze", "Punkty", 'Wygrane', 'Remisy', 'Porażki', 'GZ', 'GS']
-tabela_html = table_style + df3[cols2].to_html(index=False, escape=False)
+
+cols2 = ['Pozycja', 'Drużyna', "Mecze", "Punkty", 'Wygrane', 'Remisy', 'Porażki', 'GZ', 'GS']
+
+table_style = """
+<style>
+.scroll-table {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.scroll-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+</style>
+"""
+
+tabela_html = (
+    table_style
+    + '<div class="scroll-table">'
+    + df3[cols2].to_html(index=False, escape=False)
+    + '</div>'
+)
+
 st.markdown(tabela_html, unsafe_allow_html=True)
 ####
 st.subheader("Podoba Ci się nasz symulator ligowy?", divider = 'gray')

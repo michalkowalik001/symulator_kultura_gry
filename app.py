@@ -6,7 +6,7 @@ from utils.sidebar import show_sidebar
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="EKSTRAKLASOWE PRZEWIDYWANIA",
+    page_title="Symulator Ligi Polskiej",
     layout="wide"
 )
 
@@ -39,6 +39,14 @@ card_style = """
     </a>
 </div>
 """
+st.markdown(
+    card_style.format(
+        url="#",  # albo inny link, np. "https://ekstraklasa.org"
+        emoji="🏆",
+        text="Symulator Ekstraklasy. Wybierz tryb:"
+    ),
+    unsafe_allow_html=True
+)
 
 
 st.markdown(
@@ -54,7 +62,7 @@ st.markdown(
     card_style.format(
         url="https://symulator-kultura-gry.streamlit.app/~/+/eklapa_klub_site",
         emoji="⚽️",
-        text="Statystyki i przewidywania zespołowe"
+        text="Statystyki i przewidywania klubowe"
     ),
     unsafe_allow_html=True
 )
@@ -70,7 +78,7 @@ src="https://sy0kh.mjt.lu/wgt/sy0kh/0phq/form?c=f6f3e641" width="100%" style="he
 """
 
 content_1 = """
-<p><b>Chcemy stworzyć kurs, w którym pokażemy jak zostać analitycznym magikiem i być w stanie przewidywać i symulować wyniki meczów i rozgrywek ligowych.</b></p>
+<p><b>Chcemy stworzyć kurs, w którym pokażemy jak zostać analitycznym magikiem i symulować wyniki meczów i rozgrywek ligowych.</b></p>
 
 <p>Niezależnie czy analizujesz dane na co dzień, czy jesteś zupełnie zielony i nie masz pojęcia jak się do tego zabrać. Przeprowadzimy Cię przez cały proces od A do Z.</p>
 
