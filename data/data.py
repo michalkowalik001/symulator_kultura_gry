@@ -57,7 +57,7 @@ def df4():
 
     club_mapping = {
         "Rakow": "Raków",
-        "Legia": "Legia Warsaw",
+        "Legia Warszawa": "Legia Warszawa",
         "Lech": "Lech Poznań",
         "Jagiellonia": "Jagiellonia",
         "Pogon": "Pogoń Szczecin",
