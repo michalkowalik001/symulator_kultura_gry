@@ -52,9 +52,6 @@ teams = [
 
 selected_team = st.selectbox("**Wybierz zespół**", teams)
 
-if selected_team == "Legia Warszawa":
-    selected_team = "Legia Warsaw"
-
 st.header(selected_team, divider = 'grey')
 
 df = df()
